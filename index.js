@@ -1,11 +1,10 @@
 import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import userRoutes from './routes/clientes.js';
 import taskRoutes from './routes/ordenes.js';
+import cors from 'cors';
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 app.use('/clientes', userRoutes);
 app.use('/ordenes', taskRoutes);
